@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: spiderfoot
+    env: python
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: python3 sf.py -l 0.0.0.0:$PORT
+    envVars:
+      - key: PORT
+        value: 10000
